@@ -1,75 +1,51 @@
-Fixed Issues since Linux Mint 18.2 BETA
+Fixed Issues since Linux Mint 18.3 BETA
 
 All editions
 ------------
-    redshift-gtk should depend on geoclue-2.0
-    onboard is not visible in the app menu
 
-    guest sessions:
-        don't start mintwelcome
+    mintsources:
+        doesn't start in some locales due to unicode error (German, Russian..etc) + various unicode issues
+        can't add PPA
+        segfault in base repository speed tests
 
-    slick-greeter/lightdm-settings:
-        background color doesn't seem to work
-        padding issue when hovering session button
-        wrong logitech keyboard layout
-
-    pix:
-        Support for Fujifilm RAW files
-        Support for EXIF orientation in RAW files
-
-    mintupdate:
-        kernel headers for 4.4 confuse ppl
-        Clicking Linux kernel headers 4.4, and selecting ‘Ignore updates for this package’ has no effect. Understandable for newer kernel/kernel headers update?
-        update policy choice doesn't stick
-        don't start mintupdate in guest sessions
-        Don't use Ctrl+C as shortcut to empty the list (needed to copy text e.g. from the description of changes)
-        Firefox should always be flagged as a security update
-        Fit policy page within 800x600
-
-    blueberry:
-        add a way to disable the autostart
-        Button on popup to open/view file just received via Bluetooth is not translated
-        unicode issue when receiving file
+    Xed has some untranslated items for pt_BR in the “View, Larger Text, Smaller Text, Normal size” option.
+    virtualbox guest support removed (no longer needed, well done Oracle ;))
 
     mintinstall:
-        can't access office category (happens in MATE but not in Cinnamon, issue in Pixbuf SVG support..)
+        flatpaks do not install when they miss dependencies (discord for instance)
+        the installation/removal progress needs to show more info than just the progressbar
+        window is too big and won't maximize in 1024x768
+        reset scrolledwindows when appropriate
+        fix name collisions in search/lists
+        missing xdg-desktop-portal-gtk
+        fix flatpaks not showing up in menus on first login
+        can't install steam (debconf)
+        flatpak spinner should indicate that it will take some time...
+        some flatpaks are missing icons
 
-    codecs:
-        remove xplayer-mozilla
-        remove icedtea
-        gstreamer fails to install codecs
+    mintbackup:
+        the icon for Personal data (home directory) should be the same as home directory icon
 
-    artwork:
-        xfce window buttons in mint-y
+    mintupdate:
+        no window progress when installing/removing kernel
+
+    mintreport
+        go back and forth between two info and you see the source
+
+    blueberry:
+        rfkill survives logout
+        double-tray when toggling systray switch
 
 Cinnamon Edition
 ----------------
-    nemo-preview doesn't work
-    screensaver should not activate for guest sessions
-    In Mint menu Nemo (Files) is not translated
-    can't run onboard in cinnamon -> hide it from menu and implement a menu entry for cinnamon's built-in keyboard
-
-
-MATE Edition
-------------
-    guest session blocks mintmenu
-    mate-panel:
-        freezes everytime I try to add or move a launcher (icon) to it.
-        when applying a bg color, the “Window List” remains unchanged.
-        indicator-keylock doesn't work properly, always shows whether a lock is enabled or not
-        nm-applet (indicators in general) can't be left-clicked
-    Battery may be broken notification is annoying.
-    mintmenu https://abload.de/img/lm182recentvisgb.jpg
-    mint-y-theme:
-        When adding “Workspace Switcher” to panel it displays in blue color and does not follow default theme color green?
-        Text in the panel (including window-list and clock applet) seems to be in bold style when it should be normal style?
-    mintdesktop winrules offset https://bugs.launchpad.net/compiz/+bug/1419346
+    menu doesn't go all the way down
+    nemo grid https://github.com/linuxmint/nemo/issues/1642
+    Panel edit mode - Applets can not be repositioned, except in central green area, left (red) and right (blue) areas appear grey and non-functional
+    I can’t put any applets at all to the panel, just remove the existing.
+    menu makes cinnamon crash https://github.com/linuxmint/Cinnamon/issues/7021
+    switch audio to HDMI, disconnect HDMI, it's not possible to switch back then
 
 Xfce Edition
 ------------
-    install light-locker-settings by default
-
-
-KDE Edition (Plasma 5.8)
-------------------------
-    Add kde-config-tablet_2.0-2_amd64.deb from trusty in repos to add wacom support
+    Fix focus stealing prevention for whisker menu
+    Add xed, calculator, task manager to menu favorites.

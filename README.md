@@ -1,120 +1,115 @@
-Implemented
-===========
+Linux Mint 19
+=============
 
-    Cinnamon:
-        Support for HybridSleep
-        network applet: Rescan for wireless network
-        cinnamon-settings: spices revamp
-        nemo-preview support animated gifs
-        better translations for cinnamon-session, cinnamon-settings-daemon, nemo-extensions
-        HiDPI mode set to Auto
-        window list can show windows from other workspaces
-        secondaryActivate on middle-click in indicators (when indicator support is enabled)
-        goa/google-drive/owncloud support
-        touchpads: full libinput/synaptic support with automatic mode for clickpad/scrolling
-        on-screen keyboard: size and position configurable, no animations, fixed response to at-spi, no longer blocks onboard
-        alt-tab can show windows from all workspaces
+    remove ntp/ntpdate in Cinnamon edition?
+    [DONE] QT look and feel
+    gist-paste still used in xapps/mintsystem
+    boot time delay (35s or so for kernel phase)
+    apt sandboxing warning https://bugs.launchpad.net/ubuntu/+source/synaptic/+bug/1522675
 
-    Slick:
-        indicator tooltips
-        support for numlockx
-        optional panel indicators
-        LDAP options (hiding user list, manual login)
-        Added option for auto login
+    help
+        rtd dev guide
+        rtd security guide
+        remove local user guide
 
-    mintsources ported to GTK3
+    ubiquity
+        set LC_TIME
+        encrypted home dir (works, but won't unmount on logout)
 
-    mintinstall:
-        UI and nagivation revamp
-        GTK3 + HiDPI
-        User mode + aptdaemon backend
-        speed improvements
+    gdebi
+        polkit message is ugly and not l10n
+        pkexec doesn’t work when double-clicking from nemo
 
-    mintbackup:
-        complete revamp
-        user mode + aptdaemon backend
-        revamped UI
-        revamped threading and performance
-        restricted to home dir
-        always preserves perms/times
+    Artwork
+        remove preload of cinnamon themes
+        lack of borders without compositing
+        slick
+            mate doesn't have grid
+            choose between mint-x and mint-y
+            would be nice to show release number
+            test user bg
+            no guest accounts?
+        mint-y color variations
+        flatpak support for mint-x/y
+        tara backrounds package
+        tara backgrounds
 
-    mintdrivers:
-        better HiDPI support
-        better CPU microcode detection/presentation
+    mate:
+        caja is missing an open-as-root option
+        consider brisk menu
 
-    Xapp window-progress now supported by:
-        cinnamon
-        nemo
-        mintinstall
-        mintstick
-        mintdrivers
-        mintbackup
-        synaptic dialogs (mintlocale, mintsources, mintupdate)
-
-    xplayer:
-        removed xplayer-mozilla
-        better fullscreen statusbar
-
-    xed:
-        minimap
-
-    xreader:
-        Move history to Go menu, bring back navigation buttons into toolbar
-        100% zoom means real document size
-
-    nemo:
-        provide configure button for extensions
-        fixed nemo-media-columns makes nemo 5 times slower to list directories
+    mintwelcome:
+        write content and hint at things users might want to do (codecs, popular settings, popular apps etc..)
+        fix icon in autostart file
 
     mintreport:
-        software crash troubleshooting
-        info notices
+        detect missing l10n packages and hint at mintlocale
+        warn about root password if not set
 
-    software selection:
-        add timeshift
-        add redshift-gtk
-        remove mintnanny and mintupload
-        add dbg packages (cinnamon + xapps)
+    mintupdate:
+        safeguard against package removals (for instance, don't let users perform updates which would remove sensitive packages).
+        notice to reboot the computer when appropriate
+        purge old kernels? https://github.com/Pjotr123/purge-old-kernels-2
+        systray icon or infobar to notify user of new Mint versions
 
-    pia-manager in user mode
+    cinnamon 3.8:
+        enable recent by default, fix mem leak https://github.com/linuxmint/cinnamon-desktop/commit/2015cc0f8a8fe46384225b0cf10df45f7d3d9315#diff-7ad95a88738c9b5cd253f469add87640
+        investigate https://www.phoronix.com/scan.php?page=news_item&px=GNOME-Post-3.28-Perf-Work
+        PR on network applet to use libnm/libnma (needs fixes in Debian Stretch)
+        update translations
+        crash on filemonitor/gmenus https://github.com/linuxmint/Cinnamon/issues/5882
+        nemo
+            video thumbnails are blurry
 
-    flatpak support
+    need_update:
+        ubiquity
+        minecraft-installer
+        whatsapp-desktop
+        spotify-client
+        dropbox
+        google-earth-pro-stable
+        skypeforlinux
+        xfce4-whiskermenu-plugin
 
-Cinnamon 3.6
-============
+    considered:
+        gnome-usage
+        gnome-todo
+        gnome-system-logs → gnome-logs ?    check MATE and XFCE
+        gnome-calendar?
+        tomboy -> bijiben or gnote
 
-    cinnamon:
-        cinnamon slow to start after boot --> delay execution of appsys/docinfo until the DE is loaded
+    HiDPI support:
+        upstream apps using GTK2: Gimp, Hexchat, Tomboy.
 
-    nemo:
-        Skip GVFS when possible
-        File search:
-            full-text search
-            async search
-            simplify UI/features
-            ability to search string within files and open xed at line number
-        Performance issues:
-            File operations:
-                Mouse-cursor lag
-            Loading views:
-                switching views is slower than reloading them
-                existing thumbs are loaded asynchronously
-                loading is slower than with ls (could be Gvfs, could be the way we render view in GTK. For 25k elements, 0.4s with ls, up to 6s in icon view for Nemo/Caja)
-        video thumbnails are blurry
+    release upgrade tool
+        migrate to pkexec
+        make sure timeshift config is in place
+        make sure mdm isn't in use anymore
 
-    cinnamon extension core contains non-translatable msgids
+LMDE 3
+======
 
-Linux Mint 18.3
+    Backports
+        flatpak/ostree/appstream?
+        meson/debhelper/dh_autoreconf?
+
+Linux Mint 19.1
 ===============
 
-    hunspell-en-gb not installed for UK installed (similar issue for other languages)
+    artwork
+        add dark variant to Mint-Y
 
-    xfce:
-        upgrade xfce-terminal to 0.8.0?
+    cinnamon
+        muffin to render titlebars with GTK themes (i.e. drop support for metacity themes)
 
-    software/repo:
-        ensure the presence of google-earth and skype in repo/featured
-        install mp3 support without codecs
+    mate
+        marco: add support for GTK dark variants
+
+    system
+        plymouth: center text, hide "None" value
+
+Roadmap
+=======
 
     desktop-search:
         local files
@@ -124,21 +119,8 @@ Linux Mint 18.3
         dictionary
         translations
 
-    mintwelcome:
-        blurry icons in HiDPI
-        consider accompanying the user and hinting at things he/she might want to do (codecs, popular settings, popular apps etc..)
-
-    mintupdate:
-        safeguard against package removals (for instance, don't let users perform updates which would remove sensitive packages).
-        notice to reboot the computer when appropriate
-        kernelwindow: make kernel series column desc-sorted and select the active series
-        purge old kernels? https://github.com/Pjotr123/purge-old-kernels-2
-
-    system:
-        compiler optimization: consider optimizing compiled binaries for Cinnamon/Xapps
-
-Roadmap
-=======
+    mate:
+        switch mozo for menulibre
 
     mintreport:
         dmesg errors
@@ -150,8 +132,9 @@ Roadmap
     implement an alarm clock
 
     cinnamon:
+        cinnamon slow to start after boot --> delay execution of appsys/docinfo until the DE is loaded
+        CSD: support mouse wheel speed? Evdev scrolling distance?
         menu keywords: looking for display in menu shows color first
-        consider: notifications stay on desktop until mouse is moved + a few secs
         preferences > keyboard > custom shortcuts. Used with a Spanish keyboard layout. Recorded: crtl+number and ctrl+Shift+number (e.g. ctrl+1 and ctrl+shift+1 = ctrl+!) they are recorded correctly. When using the shortcut the command defined in the shift combination is triggered with just ctrl+number (i.e. ctrl+1). The complete combination triggers nothing (i.e. ctrl+shift+1 does nothing) and the comand defined in ctrl+number can never be used. This worked in 17.3.
         track/troubleshoot shutdown sequence (user should know what is happening when shutdown isn't immediate)
         track/troubleshoot vsync, compositing, unredirected windows and policy
@@ -168,8 +151,9 @@ Roadmap
         Is there any reason why there are two names for the same item, eg. "Trash" and "Rubbish Bin"? Would it be better to standardise on only one name?
         add gnome-screenshot to panel, right-click and select "Take screenshot of a selected area". This runs gnome-screenshot -a.. it should work but it doesn't. Is it because of the panel launcher capturing the click event or something?
 
+    make the GOA frontend an Xapp (it should be cross-DE), disable buggy/irrelevant services
+
     xapps
-        add an option to blank other monitors when in full screen in xviewer/xreader/pix
         implement an app-sharing protocol to quickly move a document from one app to another
 
         gestures support:
@@ -198,21 +182,14 @@ Roadmap
 
     artwork:
         Tray icons are black with mint-y themes.
-        Mint-Y themes Shade option is unavailable
         mint-x-icons: network status icons have a dark background in panel 33px and bigger (sound icon looks wrong in 41px and bigger).
         mint-y The maximize/restore window control button doesn’t change visually between in maximized and restored state (default theme and Mint-Y-Dark)
 
-    kde:
-        SDDM stays in autologin after OEM install
+    system:
+        compiler optimization: consider optimizing compiled binaries for Cinnamon/Xapps
 
 R&D
 ===
-
-    mintupdate:
-        prompt for reboot after kernel install?
-
-    nemo:
-        remove duplication between Eject and Safely Remove (for removable devices).
 
     system
         consider enabling recommends
@@ -220,22 +197,10 @@ R&D
     review logind.conf changes in:
         MATE
         Xfce
-        KDE
-
-    ubiquity:
-        inhibit sessions via libxapp (need to do it in KDE too)
 
     libindicator++?
         client-rendered icon/menu (ala libindicator)
         support all the features from GTK statusicon (tooltips, left/right clicks etc..)
-
-    use aptdaemon?
-        aptdaemon doesn't work in LMDE and is being abandoned upstream
-        in mintupdate, remove dep on synaptic, remove admin rights for checkAPT.py
-        in mintwelcome and codec menu entry, switch from apturl to aptdaemon
-        in mintsources, remove dep on synaptic
-        remove synaptic from default selection
-        remove synaptic from mintmenu's favorites
 
     network discovery:
         easy out-of-the-box interactions (messaging/presence/file-sharing) over the LAN
@@ -243,12 +208,79 @@ R&D
     windows compatibility layer:
         seamless wine integration
 
-    HiDPI support:
-        upstream apps using GTK2: Gimp, Hexchat, VLC, Pidgin, Tomboy.
-        mint projects using GTK2: gksu
 
-LMDE 3
-======
+Implemented
+===========
 
-    gnome-calculator app title is "gnome-calculator"
-    live-installer should show partition labels
+cinnamon
+    new combo options for spices settings (combo options, valid values)
+    sound applet:
+        can now also mute input on middle-click
+        next/previous track on right/left scroll
+        album art keep aspect ratio
+    sound volume can go all the way to 150%
+    better CSD windows support: titlebar click actions and button layouts
+    faster to map windows
+    better window animations
+    better window list thumbnails
+    notifications:
+        can be shown at the bottom of the screen
+        close button
+        no more fade-effect
+        no longer vanish when focusing caller app
+    ability to show desklets on top of windows thanks to show-desklets applet, or Super+Tab
+
+nemo:
+    symbolic icons
+    faster view render
+    stronger extension code
+    File search:
+        async search
+        simplify UI/features
+
+improvements to mint-y-icons
+    improved icons
+    backports from moka
+    crisper HiDPI with @2x icons
+
+xreader
+    recent view
+    preferences, optional toolbar buttons
+    remove annotations
+    epub support (thumbs fixed, allow to save document)
+    thumbnail zoom
+    smooth scrolling
+
+xed
+    refined look/feel with GTK 3.22 support
+    shortcuts window
+    new preference window (from xapps)
+
+mintsources:
+    PPA: show already installed packages
+
+mintupdate:
+    can be backported (locales ...)
+    shortcut window
+    timeshift integration replace levels/policy
+    kernel install rely on meta
+    automatic updates
+    new type to mark updates from other PPA/repos
+    switch type icons to symbolics
+
+mintwelcome:
+    new layout
+
+pia-manager:
+    remembers username/password/gateway
+
+docs
+    translation guide
+    troubleshooting guide
+
+hidpi:
+    2x icons
+    pkexec instead of gksu
+
+software selection:
+    pidgin removed

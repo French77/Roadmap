@@ -2,38 +2,34 @@ Triaged reports
 
 Not a bug
 ---------
-    lightdm-settings: It seems that the user-defined logo settings inside the login dialog have no effect right now. --> only visible with multiple monitors
-    mate-control-center: appearance Interface tab Ticking and unticking “Show icons in menus” doesn’t change anything in the Preview below (same as option in mintdesktop, GTK3 requires explicit menu icon to be set, thus code changes as GNOME tried to obsolete the use of icons in menus)
-    mate: Calendar doesn’t auto-close when losing focus like when clicking on the desktop.
+    Software Manager: remove a package with dependencies, Software Manager continues to show the dependencies as installed. -> we only rebuild
+    startup apps: 1) install Caffeine or any other software that will appear in Startup Applications, 2) uninstall it, 3) Open Startup Application and the link is still there -> need to apt purge since it's a conf file
 
 Outside of the scope
 --------------------
-
+    could you add a VPN L2TP to the live image. Internet is not present.
 
 Can't reproduce
 ---------------
-    Gufw Firewall does not start either using Firewall Configuration button or by terminal cmd gufw. I tried it several times
-    Codecs Installer is not in the menu after installation (tested with Xfce)
-    the media codecs installer is lacking some translations to german
-    kde: There seems to be a bug in Desktop Settings > Wallpaper: when you scroll down the list of images, the cursor jumps back up on its own.
+    synaptic: On the very first start the quick-filter field + the label placed above are not displayed. Successive starts (with/without reboot) show both. --> probably rebuilding its index.
+    pt_BR:
+        The users and groups asks for password and when it opens the window it appears ask for password again and it gets in an infinite loop.
+        Ppa fonts do not open through the system central, neither by the update manager nor by the menu.
+        Bluetooth in system settings takes several minutes to open.
+        Desklets in the Download option, the download failed with the following message “A problem occurred while trying to access the server, please try again later. Details: HTTP Error 400: Bad Request ”
+    cinnamon:
+        crash when restarting nm: https://blog.linuxmint.com/?p=3445#comment-137946
+        gnome-keyring-daemon delays session quit
+    slick:
+        running a live session under VirtualBox with two monitors defined. Playing with the login window settings, just to see what happens. Under “Optional pictures > Other monitors”, selected a different image than the background. Logoff. The second monitor shows the optional picture. The main monitor shows half of each picture.
+    gdebi:
+        can't install opera with gdebi -> debconf support is there in the terminal dropdown
+    Mint Backup crashes when trying to save to another drive other then the home drive. It will get to 13% and crash every time. If you save it to the home drive it works fine. 
 
 Upstream
 --------
-    GNOME:
-        gnome-system-tools: date-time, the Help show the option “choose the server” for NTP which no longer exists.
-
-    KDE:
-        https://bugs.launchpad.net/ubuntu/+source/kde-l10n-sr/+bug/1683607
-        When bringing up a context menu on the desktop and choosing “Configure Desktop”, KDE brings up a dialog named “Folder View Settings.” When using that dialog to switch from Folder View layout to Desktop layout (and pressing the Apply button), or vice versa, the dialog box disappears. I have to bring it up again to use it.
-
-    MATE:
-        mate-applets:
-            The ‘netspeed-applet 1.18.1’ now continuously resizes as the bitrate changes. Installed between the ‘Clock’ and ‘Notification Area’ means all the icons in the notification area jump around a lot.
-            Sticky Notes: no marking, copy possible – https://github.com/mate-desktop/mate-applets/issues/236
-
-        caja:
-            list-view zoom issue https://github.com/mate-desktop/caja/issues/790
-            file operations dialog queue/pause/play/cancel buttons need tooltips (queue button is far from explicit by itself)
-
-        mate font viewer should be called font viewer, and its app icon isn't found.
-
+    goa: https://imgur.com/a/hCLZe
+    mate:
+        map in calendar applet is stretched
+        emblems/colors don't work https://github.com/mate-desktop/caja/issues/506
+    Xfce the network manager applet pop up window from the indicator plugin is very small, uncomfortable. --> GTK menu popups.. known limitation in the toolkit.
