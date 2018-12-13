@@ -1,51 +1,46 @@
-Fixed Issues since Linux Mint 18.3 BETA
+Fixed Issues since Linux Mint 19.1 BETA
 
 All editions
 ------------
 
-    mintsources:
-        doesn't start in some locales due to unicode error (German, Russian..etc) + various unicode issues
-        can't add PPA
-        segfault in base repository speed tests
+xed menu item not translated
+https://github.com/linuxmint/mint-19.1-beta/issues?q=is%3Aissue+is%3Aclosed
 
-    Xed has some untranslated items for pt_BR in the “View, Larger Text, Smaller Text, Normal size” option.
-    virtualbox guest support removed (no longer needed, well done Oracle ;))
-
-    mintinstall:
-        flatpaks do not install when they miss dependencies (discord for instance)
-        the installation/removal progress needs to show more info than just the progressbar
-        window is too big and won't maximize in 1024x768
-        reset scrolledwindows when appropriate
-        fix name collisions in search/lists
-        missing xdg-desktop-portal-gtk
-        fix flatpaks not showing up in menus on first login
-        can't install steam (debconf)
-        flatpak spinner should indicate that it will take some time...
-        some flatpaks are missing icons
-
-    mintbackup:
-        the icon for Personal data (home directory) should be the same as home directory icon
-
-    mintupdate:
-        no window progress when installing/removing kernel
-
-    mintreport
-        go back and forth between two info and you see the source
-
-    blueberry:
-        rfkill survives logout
-        double-tray when toggling systray switch
+mintsources: Add kabyle support
+update translations
+FF in live repo
+FF support for dark themes
+in lightdm, onboard doesn't work (empty area)
 
 Cinnamon Edition
 ----------------
-    menu doesn't go all the way down
-    nemo grid https://github.com/linuxmint/nemo/issues/1642
-    Panel edit mode - Applets can not be repositioned, except in central green area, left (red) and right (blue) areas appear grey and non-functional
-    I can’t put any applets at all to the panel, just remove the existing.
-    menu makes cinnamon crash https://github.com/linuxmint/Cinnamon/issues/7021
-    switch audio to HDMI, disconnect HDMI, it's not possible to switch back then
+
+wacom rotates with display
+touchscreen doesn't rotate with display
+crash when using kazam.
+After you move the bottom panel to a side, you need to restart Cinnamon because the menu session icons get lost: http://imgur.com/r3gotjal.png
+In System settings, when I click on "Input method", the "Language settings" open instead! When clicking on "Input method" in the start menu, it works. Japanese also works fine.
+calendar text is too small (it's the same size as before, we made the status applets smaller to compensate)
+The notification area icons will look more elegant if is set to 22 px. by default (even so, will be bigger than the defaults on Linux Mint 19.0).
+Start menu doesn't auto-shrink – too much space between the lock and favorites button and unused space under "Places".
+in settings, "window list" applet (when switched to modern) looks as if it's added and broken.
+gwl: Ctrl to launch new instance
+gwl: middle-click on empty pinned group wants to kill something
+mint-y gwl theme broken for top/right/left panels
+gwl:
+  different system settings modules (say colors and date-time) get grouped together, despite having a different icon
+  mint-x + panel on top -> all groups active
+  remove dnd option to pin
+  dnd on pin should be persistent
+  vertical thumbs, restart cinnamon -> wrong number of thumbs
+center-align applet text (test with %n in clock applet)
+The ‘system-shutdown’, ‘ system-log-out’ and ‘system-lock-screen’ icons don’t scale properly on big panels (50+). Instead of 48px icons they are upscaled (blurry) 32px.
+
+MATE Edition
+------------
 
 Xfce Edition
 ------------
-    Fix focus stealing prevention for whisker menu
-    Add xed, calculator, task manager to menu favorites.
+
+Manual steps for upgraders
+--------------------------

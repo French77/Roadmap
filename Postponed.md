@@ -1,13 +1,6 @@
 Improvements selected for the future
 =====================================
 
-Mint 18.x
----------
-
-    nemo:
-        [Can't reproduce] Regression in Nemo: Umounting dual-partitioned HDD freezes Nemo.
-        video thumbnails are blurry https://github.com/linuxmint/nemo/issues/825.
-
     internet/network:
         remove modemmanager?
 
@@ -16,9 +9,6 @@ Mint 18.x
 
     mintupload:
         ftps support
-
-    mintlocale:
-        Add/remove alt-tab icon is blurry
 
 Cinnamon
 --------
@@ -31,7 +21,6 @@ Cinnamon
         network applet https://git.gnome.org/browse/gnome-control-center/commit/panels/network?id=63756458b2de0d730763cc2acbd510659e4d00a5
 
     nemo:
-        review all usage of Gio/Glib
         Prefs > Display > Icon Caption > first option SIZE, and Prefs > Preview > Folders > options NEVER ---> results in "–" showing under directories (tested in icon view).
         if I press ALT+F2 and then enter “nemo ftp://ftp.mydomain.xyz” to access to my personal ftp server trough nemo, I’ll get a request of username and password: it’s OK. The problem is that if I select the option to remember forever the username and password, it will not have effect: if I reboot Linux Mint, the next time I’ll try to access my ftp trough nemo I’ll get the request of username e password. So… nemo doesn’t remember my credentials… it’s frustrating.
         Entering the folder of long name , the path disappeared screen capture 1) it shows a folder of longname https://dl.dropboxusercontent.com/u/54450962/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%2C%202013-11-18%2002%3A18%3A19.png screen capture 2) entering the long name folder , meeting disappeared folder path of long name folder https://dl.dropboxusercontent.com/u/54450962/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%2C%202013-11-18%2002%3A18%3A34.png screen capture 3) But Actually It was still dsiplayed at max window https://dl.dropboxusercontent.com/u/54450962/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%2C%202013-11-18%2002%3A19%3A13.png
@@ -99,10 +88,7 @@ MATE
 
 LMDE
 ----
-    add the ability to encrypt the home directory
     Localization of the installer slideshow
-    Live media isn't ejected at live session shutdown
-    compiz integration missing
     caja: it looks like caja briefly dies at session start just before reappearing again
     missing plymouth-text theme
     Marco doesn't provide WM context menu options for CSD apps
