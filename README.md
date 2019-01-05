@@ -6,6 +6,7 @@ wine: metapackage, mime handler and menu items
 
 artwork:
   - mintwelcome icon
+  - package mint-y variations into flathub
 
 cinnamon:
   - Even after authorize Samba in gufw, Nemo doesn’t show the local network and machine on it. I must manually type smb://user@ip to get in (after workgroup and password) In Mint 18 that was directly available.
@@ -14,6 +15,11 @@ cinnamon:
   - Unable to unlock the screensaver via LDAP with libpam-ldap and nscd packages installed pointing to an openldap server.
   - csd power: https://github.com/GNOME/gnome-settings-daemon/commit/82af1816f32a26f28027ea7ce8edc79cd833bc76
   - in HiDPI, keyboard applet, the flags is not the proper size. Hovering it fixes it.
+  - mounted volume applet: no notification when unmounting (as opposed to when it's done in nemo).
+  - gwl: Enable "application name" label. Open FF, open at least two browser tabs. Close FF. The label slides over the icon and doesn't disappear: https://kepkuldes.com/image/UoNHl
+  - nemo: custom folder colors are blurry (they use png instead of svg)
+
+xapps don't react consistently to ctrl+q and ctrl+w
 
 mintupdate:
     don't gather packages in checkAPT as root: https://github.com/linuxmint/mintupdate/issues/379
@@ -58,6 +64,7 @@ Linux Mint 19.2
         systray icon or infobar to notify user of new Mint versions
         remember sorting of updates
         have an option for update manager to initiate a timeshift backup prior to applying upgrades?
+        retire levels
 
     port mintstick to python3
 
@@ -94,6 +101,9 @@ Linux Mint 19.2
 
     xreader:
         consider zoom factor indicator
+
+    xed:
+        option to remember past opened-documents
 
 LMDE 4
 ======
