@@ -1,118 +1,36 @@
-Done
-====
+Linux Mint 19.2 BETA bugs
+=========================
 
-mintreport:
-    sysinfo tab
-    migrate to systemd-coredump (to make it compatible with LMDE)
+    HiDPI
+        mintlocale flags
+        mintsources flags
+        cinnamon theme settings
 
-mintinstall/mintupdate:
-    use common cache to know all manually installed packages, not just the ones installed via mintinstall (only in Mint, not LMDE)
+    mate:
+        caja
+            wrong icon in engrampa compress action
+            wrong icon in change color action
+        theme settings
+            folder icons too big
+            mint-x background too dark
+        hidpi
+            titlebar buttons are blurry
 
-Cinnamon 4.2:
-    - preferred apps: Added an option for PDF reader
-    - simplified docinfo
-    - simplified appsys
-    - cmenus ported to meson
-    - onscreen keyboard in screensaver
-    - background slideshow applet shows filename
-    - faster input lag
-    - faster menu
-    - printer applet
-    - vsync can be switched without restarting
-    - configurable vsync method
+    artwork:
+        flathub icon theme only installed when installing an app
 
-mintupdate:
-    able to blacklist a specific version
-    detects apt lock and delays refresh instead of failing
-    automated autoremove of kernels and packages
-    inhibit shutdown/reboot during automation
-    persistent and logrotate for /var/log/mintupdate.log
-    auto-refresh is now configurable
+Maintenance
+===========
 
-mintupdate
-    refreshes automatically when apt cache changes
-    add man pages
-    warns that reboot is required after kernel update
-    info dialog updates in real time
-    refresh mechanism uses timestamp, no longer impacted by suspends, can be configured to periods longer than the session
-    warns 90 days before distro reaches EOL
-    retire level and obsolete options
-    checkAPT no longer run as root
-    kernel series supported
-    multiples can be installed/removed (queued operations)
-    kernels show their EOL
-    status page when mintupdate needs to update itself
-    refresh page
-    mintupdate page
+    update mirrors
+    update translations for installation guide
+    advertise community website in get involved page
+    add sum to download page directly
 
-mintmenu:
-    configurable tooltips
-    configurable search bar position
-    performance improvements
-    preferences rewrite
-    recent -> documents first
-    removed obsolete code
-
-artwork:
-    mint-y:
-        improved contrast in nemo sidebar
-    switch to ubuntu fonts
-    improved contrast
-    clear and dark action icons
-    remove noto-sans, noto-sans-hinted, noto-sans-unhinted? (create stuttering in chromium)
-    currently debating mint-y-darker
-
-blueberry:
-    ability to connect/disconnect paired devices in systray
-
-xed:
-    print preview fixes
-    toggle comments
-
-wine:
-    wine-installed + wine-desktop-files
-    winehq-stable in repos
-    mintinstall support for wine-installer
-    rel notes
-    desktop-file-utils
-
-python-xapp
-    GSettings widgets
-
-Non-blocking bugs
-=================
-
-print test page https://github.com/linuxmint/linuxmint/pull/77/files
-
-artwork:
-  - mintwelcome icon
-  - package mint-y variations into flathub
-
-pia-manager
-
-cinnamon:
-  - When in tablet mode (that is, the screen is rotated and covering the keyboard) the RotateWindows key doesn't work anymore... It just does nothing...
-  - menu-editor: picking a pixmap in /usr/share/pixmaps for a category results in no icon being shown in the menu.
-  - Unable to unlock the screensaver via LDAP with libpam-ldap and nscd packages installed pointing to an openldap server.
-  - csd power: https://github.com/GNOME/gnome-settings-daemon/commit/82af1816f32a26f28027ea7ce8edc79cd833bc76
-  - in HiDPI, keyboard applet, the flags is not the proper size. Hovering it fixes it.
-  - mounted volume applet: no notification when unmounting (as opposed to when it's done in nemo).
-  - gwl: Enable "application name" label. Open FF, open at least two browser tabs. Close FF. The label slides over the icon and doesn't disappear: https://kepkuldes.com/image/UoNHl
-  - nemo: custom folder colors are blurry (they use png instead of svg)
-
-xapps don't react consistently to ctrl+q and ctrl+w
-
-mintupdate:
-    safeguard against package removals (for instance, don't let users perform updates which would remove sensitive packages).
-
-timeshift: after restoration and before reboot, run hooks (could be used to adjust grub menu)
-
-update translations for installation guide
-
-Linux Mint 19.2
+Linux Mint 19.3
 ===============
 
-    add sum to download page directly
+    favorite/starred documents (nemo, xapps)
 
     https/apt:
         add https support for packages.linuxmint.com
@@ -120,34 +38,42 @@ Linux Mint 19.2
         add feature in mintsources to list https mirrors only?
 
     system:
-        add support for 32-bit EFI: https://forums.linuxmint.com/viewtopic.php?f=29&t=283381
-        add support for https://help.ubuntu.com/community/Boot-Repair
         add CLI support for foreign packages list/removal/downgrade
 
-    samba: https://github.com/linuxmint/linuxmint/issues/125
-
-    wine: metapackage, mime handler and menu items https://bugs.launchpad.net/ubuntu/+source/wine/+bug/1576326
-
-    artwork considerations:
-        revamp sound theme?
-        revamp isolinux/grub menus?
-        revamp plymouth splash?
-        text-size to be configurable in panel zones?
-        cinnamon/gtk mint-y: tooltips don't match theme
-        grey-on-grey icons (many in cinnamon-settings)
-        review color variations in mint-y
-        solid opaque terminal background?
+    artwork:
+        new logo
+            branded backgrounds
+            splash screens
+            isolinux/grub menu
+        new website theme
+        use dark-variants for dark apps (xplayer..etc) in Mint-Y (needs fixes in mint-themes and marco: https://github.com/GNOME/metacity/commit/6b0d325442b995a78b8783384f7ec370db1369a4)
+        icons
+            grey-on-grey icons (many in cinnamon-settings)
+            review color variations in mint-y
+            add missing yellow icons
         update MATE metathemes
-        mint-y-darker dark menus should use dark assets
 
     mintlocale:
-        https://github.com/linuxmint/mintlocale/issues/36
+        ability to set time: https://github.com/linuxmint/mintlocale/issues/36
 
-    pia-manager:
-        https://github.com/linuxmint/pia-manager/issues/11
+    mintupdate:
+        safeguard against package removals (for instance, don't let users perform updates which would remove sensitive packages).
+
+    timeshift: after restoration and before reboot, run hooks (could be used to adjust grub menu)
+
+Ideas - Todos
+==============
+
+    fingerprint reader -> slick-greeter support
+    https://askubuntu.com/questions/46501/why-can-other-users-see-the-files-in-my-home-folder
+
+    artwork:
+        revamp sound theme?
+        cinnamon
+            text-size to be configurable in panel zones?
+            cinnamon/gtk mint-y: tooltips don't match theme
 
     help
-        rtd dev guide
         rtd security guide
 
     mate:
@@ -182,15 +108,17 @@ Linux Mint 19.2
 
     cinnamon
         gtk windows
-        merge appsys and cmenus
-        ditch docinfo
+        - When in tablet mode (that is, the screen is rotated and covering the keyboard) the RotateWindows key doesn't work anymore... It just does nothing...
+        - menu-editor: picking a pixmap in /usr/share/pixmaps for a category results in no icon being shown in the menu.
+        - Unable to unlock the screensaver via LDAP with libpam-ldap and nscd packages installed pointing to an openldap server.
+        - csd power: https://github.com/GNOME/gnome-settings-daemon/commit/82af1816f32a26f28027ea7ce8edc79cd833bc76
+        - in HiDPI, keyboard applet, the flags is not the proper size. Hovering it fixes it.
+        - mounted volume applet: no notification when unmounting (as opposed to when it's done in nemo).
+        - gwl: Enable "application name" label. Open FF, open at least two browser tabs. Close FF. The label slides over the icon and doesn't disappear: https://kepkuldes.com/image/UoNHl
 
     nemo
         better navbar
         consider sping loaded folders https://www.youtube.com/watch?v=gdUPrMjlLy8
-
-    xreader:
-        consider zoom factor indicator
 
     xed:
         option to remember past opened-documents
@@ -199,6 +127,7 @@ LMDE 4
 ======
 
 remove debian-multimedia
+add backports (priority 100)
 
 Roadmap
 =======
