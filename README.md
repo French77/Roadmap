@@ -1,23 +1,7 @@
-Linux Mint 19.2 BETA bugs
-=========================
+Trello Boards
+=============
 
-    HiDPI
-        mintlocale flags
-        mintsources flags
-        cinnamon theme settings
-
-    mate:
-        caja
-            wrong icon in engrampa compress action
-            wrong icon in change color action
-        theme settings
-            folder icons too big
-            mint-x background too dark
-        hidpi
-            titlebar buttons are blurry
-
-    artwork:
-        flathub icon theme only installed when installing an app
+Linux Mint 19.3: https://trello.com/b/5OfcpmZi/linux-mint-193
 
 Maintenance
 ===========
@@ -27,8 +11,49 @@ Maintenance
     advertise community website in get involved page
     add sum to download page directly
 
+DONE
+====
+
+    mintlocale:
+        ability to set time
+
+    HiDPI
+        mintlocale flags
+        mintsources flags
+        cinnamon-screensaver
+        cinnamon theme settings
+        gtkstatusicon -> xappstatusicon, ported Cinnamon, blueberry, mintupdate, mintupload.
+
+    mintreport:
+        l10n reports
+        drop webkit
+        detect missing l10n packages and hint at mintlocale
+        warn about root password if not set
+        support systray
+
+    cinnamon:
+        HiDPI moved to display module
+        support for XAppStatusIcon
+        about dialogs are Gtk now
+        simplified window settings
+        new window focus setting
+        applets can be reloaded from their setting window burger menu
+
 Linux Mint 19.3
 ===============
+
+    xfce 4.14
+
+    mate:
+        caja
+            wrong icon in engrampa compress action
+        theme settings
+            folder icons too big
+            mint-x background too dark
+        hidpi
+            titlebar buttons are blurry
+
+    apturl doesn't refresh
 
     favorite/starred documents (nemo, xapps)
 
@@ -46,20 +71,29 @@ Linux Mint 19.3
             splash screens
             isolinux/grub menu
         new website theme
-        use dark-variants for dark apps (xplayer..etc) in Mint-Y (needs fixes in mint-themes and marco: https://github.com/GNOME/metacity/commit/6b0d325442b995a78b8783384f7ec370db1369a4)
+        use dark-variants for dark apps (xplayer..etc) in Mint-Y (needs fixes in mint-themes and marco: https://github.com/mate-desktop/marco/pull/530)
         icons
             grey-on-grey icons (many in cinnamon-settings)
             review color variations in mint-y
             add missing yellow icons
         update MATE metathemes
 
-    mintlocale:
-        ability to set time: https://github.com/linuxmint/mintlocale/issues/36
-
     mintupdate:
         safeguard against package removals (for instance, don't let users perform updates which would remove sensitive packages).
+        notify on new mint-upgrade-info release.
+
+    mintlocale:
+        remove language packs and packages when a language is removed
 
     timeshift: after restoration and before reboot, run hooks (could be used to adjust grub menu)
+
+    apps:
+        consider celluloid vs xplayer
+        consider aptik vs mintbackup
+        consider drawing vs gimp (https://github.com/maoschanz/drawing/issues/82)
+
+    xapps:
+        print preview doesn't feature a print button
 
 Ideas - Todos
 ==============
@@ -77,7 +111,6 @@ Ideas - Todos
         rtd security guide
 
     mate:
-        consider brisk menu
         fix terminal apps not running (gnome-terminal --> mate-terminal)
 
     mintupdate:
@@ -85,10 +118,6 @@ Ideas - Todos
         have an option for update manager to initiate a timeshift backup prior to applying upgrades?
 
     port mintstick to python3
-
-    mintreport:
-        detect missing l10n packages and hint at mintlocale
-        warn about root password if not set
 
     artwork
         add dark variant support to Mint-Y (needs fixes in Caja/marco)
@@ -102,9 +131,6 @@ Ideas - Todos
     xapps/cinnamon/nemo:
         don't ship icons with generic names in /usr/share/hicolor. All icons should be prefixed (cs-, xapp-, nemo-..etc..) so they don't conflict with other packages
         cinnamon-settings should use gsettingswidgets from xapp and retire its own
-
-    xfce:
-        consider backports https://blog.xfce.org/
 
     cinnamon
         gtk windows
@@ -131,6 +157,9 @@ add backports (priority 100)
 
 Roadmap
 =======
+
+    remove-apps
+        prevent removal of sensitive packets (for instance, removing GOA removes cinnamon)
 
     main ideas
         mintsystem apt downgrade
