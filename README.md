@@ -11,42 +11,31 @@ Maintenance
     advertise community website in get involved page
     add sum to download page directly
 
-DONE
-====
+Linux Mint 20
+=============
 
-    mintlocale:
-        ability to set time
+    selection:
+        open-vm-tools?
+        libinput-gestures?
 
-    HiDPI
-        mintlocale flags
-        mintsources flags
-        cinnamon-screensaver
-        cinnamon theme settings
-        gtkstatusicon -> xappstatusicon, ported Cinnamon, blueberry, mintupdate, mintupload.
-
-    mintreport:
-        l10n reports
-        drop webkit
-        detect missing l10n packages and hint at mintlocale
-        warn about root password if not set
-        support systray
-
-    cinnamon:
-        HiDPI moved to display module
-        support for XAppStatusIcon
-        about dialogs are Gtk now
-        simplified window settings
-        new window focus setting
-        applets can be reloaded from their setting window burger menu
-
-Linux Mint 19.3
-===============
-
-    xfce 4.14
+    artwork:
+        theme LO
+        remove all sound, power, network icons in mint-y-icons/panel/ (needs patches in Xfce and MATE to stop using fullcolor in panel (for MATE power manager) and notifications)
+        mint-y-icons: improve computer icon
 
     mate:
-        caja
-            wrong icon in engrampa compress action
+        Ctrl+alt+backspace support
+
+    xapp:
+        scroll events for xappstatusicon
+        switch rhythmbox icon to xappstatusicon
+
+    cinnamon:
+        cs_info: Show a distro logo
+        remove send-by-email nemo action
+
+
+    mate:
         theme settings
             folder icons too big
             mint-x background too dark
@@ -55,21 +44,11 @@ Linux Mint 19.3
 
     apturl doesn't refresh
 
-    favorite/starred documents (nemo, xapps)
-
-    https/apt:
-        add https support for packages.linuxmint.com
-        switch to https by default?
-        add feature in mintsources to list https mirrors only?
 
     system:
         add CLI support for foreign packages list/removal/downgrade
 
     artwork:
-        new logo
-            branded backgrounds
-            splash screens
-            isolinux/grub menu
         new website theme
         use dark-variants for dark apps (xplayer..etc) in Mint-Y (needs fixes in mint-themes and marco: https://github.com/mate-desktop/marco/pull/530)
         icons
@@ -77,26 +56,36 @@ Linux Mint 19.3
             review color variations in mint-y
             add missing yellow icons
         update MATE metathemes
+        consider manjaro mouse cursor?
 
     mintupdate:
         safeguard against package removals (for instance, don't let users perform updates which would remove sensitive packages).
-        notify on new mint-upgrade-info release.
 
     mintlocale:
         remove language packs and packages when a language is removed
 
-    timeshift: after restoration and before reboot, run hooks (could be used to adjust grub menu)
+    software:
+        Replace Hexchat
+        Replace Qt5Settings? (not hidpi compatible)
 
-    apps:
-        consider celluloid vs xplayer
-        consider aptik vs mintbackup
-        consider drawing vs gimp (https://github.com/maoschanz/drawing/issues/82)
+    drawing:
+        implement zoom
+        simplify rotation, flip..
 
-    xapps:
-        print preview doesn't feature a print button
+    timeshift:
+        show a try when a save is ongoing
+        let user cancel save
+
 
 Ideas - Todos
 ==============
+
+    https/apt:
+        add https support for packages.linuxmint.com
+        switch to https by default?
+        add feature in mintsources to list https mirrors only?
+
+    favorite/starred documents (nemo, xapps)
 
     fingerprint reader -> slick-greeter support
     https://askubuntu.com/questions/46501/why-can-other-users-see-the-files-in-my-home-folder
@@ -115,7 +104,6 @@ Ideas - Todos
 
     mintupdate:
         remember sorting of updates
-        have an option for update manager to initiate a timeshift backup prior to applying upgrades?
 
     port mintstick to python3
 
@@ -133,6 +121,7 @@ Ideas - Todos
         cinnamon-settings should use gsettingswidgets from xapp and retire its own
 
     cinnamon
+        - spices: Add a button to install a manually downloaded spice
         gtk windows
         - When in tablet mode (that is, the screen is rotated and covering the keyboard) the RotateWindows key doesn't work anymore... It just does nothing...
         - menu-editor: picking a pixmap in /usr/share/pixmaps for a category results in no icon being shown in the menu.
