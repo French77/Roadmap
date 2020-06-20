@@ -1,8 +1,9 @@
 Trello Boards
 =============
 
-Linux Mint 19.3: https://trello.com/b/5OfcpmZi/linux-mint-193
-Linux Mint 20.0: https://trello.com/b/9BY9I6Lp/linux-mint-20
+- Linux Mint 19.3: https://trello.com/b/5OfcpmZi/linux-mint-193
+- Linux Mint 20.0: https://trello.com/b/9BY9I6Lp/linux-mint-20
+
 Maintenance
 ===========
 
